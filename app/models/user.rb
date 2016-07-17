@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  validates :full_name, presence: true, length: {maximum: 50}
+  validates :fullname, presence: true, length: {maximum: 50}
 end
