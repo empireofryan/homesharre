@@ -18,6 +18,7 @@ gem 'bootstrap-sass'
 gem 'toastr-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 gem 'devise'
 # Use jquery as the JavaScript library
