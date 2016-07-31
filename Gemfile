@@ -19,6 +19,7 @@ gem 'toastr-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'paperclip'
 
 gem 'devise'
 # Use jquery as the JavaScript library
