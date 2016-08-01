@@ -21,6 +21,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'paperclip'
 
+gem 'geocoder'
+gem "figaro"
 gem 'devise'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -50,5 +52,5 @@ group :development do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+
 end
