@@ -146,8 +146,6 @@
       width: 100%;
     }
   </style>
-</head>
-<body>
   <div id="map"></div>
   <script>
     var map;
@@ -166,9 +164,9 @@
       });
       marker.setMap(map);
     }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_api_key']%>&callback=initMap"
-  async defer></script>
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_api_key']%>&callback=initMap"
+    async defer></script>
 
 
 			</div>
@@ -176,4 +174,24 @@
 
 
 	</div>
+
+  <!-- Close by Rooms -->
+  <h3>Near by </h3>
+  <div class="row">
+    <% for room in @room.nearbys(10) %>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= image_tag room.photos[0].image.url(:medium) %>
+        </div>
+        <div class="panel-body">
+          <%= link_to room.listing_name, room %><br>
+          (<%= room.distance.round(2) %> miles away)
+        </div>
+      </div>
+    </div>
+
+    <% end %>
+  </div>
+
 </div>
