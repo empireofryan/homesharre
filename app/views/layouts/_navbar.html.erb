@@ -13,12 +13,7 @@
   <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
 
-      <li>
-        <a href="#"><i class="fa fa-envelope-o"></i> Messages</a>
-      </li>
-      <li>
-        <a href="#"><i class="fa fa-home fa-lg"></i> Become a Host</a>
-      </li>
+
       <% if (!user_signed_in?) %>
         <li><%= link_to "Log In", new_user_session_path %></li>
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
@@ -43,12 +38,18 @@
       </li>
       <% end %>
 
+      <li>
+        <%= link_to conversations_path do %>
+          <i class="fa fa-envelope-o"></i> Messages
+        <% end %>
+      </li>
+      <li>
+        <%= link_to new_room_path do %>
+          <i class="fa fa-home"></i> Become a Host
+        <% end %>
+      </li>
   </ul>
-    <!-- <ul class="nav navbar-nav navbar-right">
-      <li><a href="../navbar/">Default</a></li>
-      <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
-      <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-    </ul> -->
+
   </div><!--/.nav-collapse -->
 </div>
 </nav>
