@@ -30,13 +30,17 @@ class ReservationsController < ApplicationController
     @trips = current_user.reservations
   end
 
+  def your_reservations
+    @rooms = current_user.rooms
+  end
+
   private
 
     def is_conflict(start_date, end_date)
       room = Room.find(params[:room_id])
 
       check = room.reservations.where("? < start_date AND end_date < ?", start_date, end_date)
-      check.size > 0? true : false
+      check.size > 0 ? true : false
     end
 
     def reservation_params
