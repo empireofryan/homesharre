@@ -11,6 +11,6 @@ class Room < ActiveRecord::Base
   validates :listing_name, :summary, length: {maximum: 500}
 
   def average_rating
-    reviews.count == 0 ? 0 : reviews.average(:star).round(2)
+    reviews.count == 0 ? 0 : reviews.average(:star).round(2) rescue nil
   end
 end
