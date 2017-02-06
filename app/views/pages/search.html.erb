@@ -13,21 +13,25 @@
           <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control" %>
         </div>
       </div>
+      <hr>
       <div class="row">
         <div class="col-md-3">
           <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: "form-control" %>
         </div>
       </div>
+      <hr>
       <div class="row">
         <div class="col-md-3">
           <%= f.text_field :price_gteq, placeholder: "Min Price", class: "form-control" %>
         </div>
       </div>
+      <hr>
       <div class="row">
         <div class="col-md-3">
           <%= f.text_field :price_lteq, placeholder: "Max Price", class: "form-control" %>
         </div>
       </div>
+      <hr>
       <div class="row">
         <div class="col-md-4">
           <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
@@ -39,6 +43,7 @@
           <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Shared Room
         </div>
       </div>
+      <hr>
       <div class="row">
         <div class="col-md-4">
           <div class="form-group">
@@ -59,6 +64,7 @@
           </div>
         </div>
       </div>
+      <br>
 
       <div class="row">
         <div class="col-md-4">
@@ -82,8 +88,26 @@
         <%= f.submit "Search", class: "btn btn-primary" %>
       </div>
 
-
     <% end %>
+
+    <hr>
+
+    <div class="row">
+      <% @arrRooms.each do |room| %>
+
+    		<div class="col-md-4">
+    			<div class="panel panel-default">
+            <div class="panel panel-default">
+    			  	<%= image_tag room.photos[0].image.url(:medium), class: "img-responsive" if room.photos.length > 0 rescue nil %>
+            </div>
+            <div class="panel-body">
+              <%= link_to room.listing_name, room %>
+            </div>
+    			</div>
+    		</div>
+      <% end %>
+    </div>
+
   </div>
 
 </div>
